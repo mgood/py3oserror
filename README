@@ -1,0 +1,12 @@
+Python 3.3's OSError subclasses for Python 2
+
+Note: this uses some dark magic to create fake exceptions that act like the
+Python 3.3 granular ``OSError`` subclasses by matching the ``errno`` attribute.
+
+E.g.::
+
+    from py3oserror import FileNotFoundError
+    try:
+        open('missing-file.txt')
+    except FileNotFoundError:
+        pass
